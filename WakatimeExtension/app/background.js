@@ -69,7 +69,7 @@ function Logtime(newUrl) {
             data: JSON.stringify(timeData),
             complete: function (xhr, timeDataReturn) {
                 if (timeDataReturn != "success") {
-                    //debugger; 
+                    //debugger;
                 }
                 else {
                     console.log('Sent Heartbeat');
@@ -110,7 +110,7 @@ function GetBranch(_Filter, url) {
 var pollInterval = 1000 * 15; // 15 seconds, in milliseconds
 window.setTimeout(startRequest, pollInterval);
 function startRequest() {
-        
+
     chrome.tabs.getSelected(null, function (tab) {
 
         Logtime(tab.url);
