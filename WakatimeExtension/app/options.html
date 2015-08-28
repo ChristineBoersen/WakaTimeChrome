@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My Test Extension Options</title>
+    <style>
+        body: {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="Filter">JSON Filter</label>
+    <textarea id="Filter" style="width:500px;height:200px;overflow:auto;"></textarea>
+    <br /><br />
+    <span style="clear: both">
+        Example Json Filter:<br />
+        <pre>
+        
+            {
+            "IgnoredSites": ["newtab", "extensions", "history", "settings", "devtools"],
+            "SlackSites": ["facebook.com", "twitter.com"],
+            "WorkSites": ["localhost", "visualstudioonline.com"]
+            }
+        </pre>
+    </span>
+    <br /><br />
+    <label for="Enabled">
+        Enabled?
+    </label>
+    <input type="checkbox" id="Enabled">
+
+    <div id="status"></div>
+    <br />
+    <button id="save">Save</button>
+
+    <script src="options.js"></script>
+</body>
+</html>
