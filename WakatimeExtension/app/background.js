@@ -50,7 +50,7 @@ function Logtime(newUrl) {
         timeData = new Object();
 
         timeData.entity = url;
-        timeData.type = "file";
+        timeData.type = "url";
         timeData.time = (new Date().getTime()) / 1000;
         timeData.project = "Chrome WebBrowsing",
         timeData.branch = Branch,
