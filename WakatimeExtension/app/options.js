@@ -20,7 +20,7 @@ function save_options() {
 function restore_options() {
     // Use default value color = 'red' and likesColor = true.
     chrome.storage.sync.get({
-        Filter: '{    "Ignored Sites": ["newtab", "extensions", "history", "settings", "devtools"],   "Slack Sites": ["facebook.com", "twitter.com"],   "Work Sites": ["localhost", "visualstudioonline.com"]}',
+        Filter: '{    "IgnoredSites": ["newtab", "extensions", "history", "settings", "devtools"],   "SlackSites": ["facebook.com", "twitter.com"],   "WorkSites": ["localhost", "visualstudioonline.com", "github.com"]}',
         Enabled: true
     }, function (items) {
         document.getElementById('Filter').value = items.Filter;
