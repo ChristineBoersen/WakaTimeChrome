@@ -3,22 +3,23 @@
 <head>
     <title>My Test Extension Options</title>
     <style>
-        body: {
-            padding: 10px;
+        body {
+            padding: 10px;           
         }
     </style>
 </head>
 
 <body>
     <label for="Filter">JSON Filter</label>
-    <textarea id="Filter" style="width:500px;height:200px;overflow:auto;"></textarea>
+    <textarea id="Filter" style="width:500px;min-height:200px;overflow:auto;"></textarea>
     <br /><br />
     <span style="clear: both">
         Example Json Filter:<br />
         <pre>
         
-            {
-            "IgnoredSites": ["newtab", "extensions", "history", "settings", "devtools"],
+           {
+            "Debugging": ["devtools"],
+            "IgnoredSites": ["newtab", "extensions", "history", "settings"],
             "SlackSites": ["facebook.com", "twitter.com"],
             "WorkSites": ["localhost", "visualstudioonline.com"]
             }
@@ -29,7 +30,16 @@
         Enabled?
     </label>
     <input type="checkbox" id="Enabled">
-
+    <br /><br />
+    <label for="DeadTime">
+        DeadTime (seconds):
+    </label>    
+    <input type="text" id="DeadTime" />
+    <div>
+        If the time since the last heartbeat is greater than the DeadTime value (defaulting to 600 seconds/10 minutes), don't use the last_project value from your wakatime statistics for the first heartbeat and use "Chrome WebBrowsing" for the project instead. Set to 0 to disable this feature.<br /><br />
+        DeadTime Use Case <i>(long winded)</i>: You startup your computer or just come back from a break and hop on the internet. You haven't opened an editor or done any work yet/recently. Without this feature enabled, your web browsing would get attached to the last project you worked on, which most likely you aren't working on right this second. As soon as you start working on a project, your heartbeats will show the correct last_project value on the next heartbeat sent from Chrome automatically.
+    </div>
+    <br /><br />
     <div id="status"></div>
     <br />
     <button id="save">Save</button>

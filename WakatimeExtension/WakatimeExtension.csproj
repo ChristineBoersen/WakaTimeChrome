@@ -41,6 +41,7 @@
   <ItemGroup>
     <Content Include="app\background.html" />
     <Content Include="app\background.js" />
+    <Content Include="app\CaptureURLChange.js" />
     <Content Include="app\img\icon.png" />
     <Content Include="app\jquery.min.js" />
     <Content Include="app\options.js" />

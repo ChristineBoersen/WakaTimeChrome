@@ -22,9 +22,15 @@
     "chrome_style": true
   },
   "background": {
-    "page": "background.html" 
+    "page": "background.html"
 
-  }
-   
-  
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": [ "CaptureURLChange.js" ]
+    }
+  ]
+
+
 }
