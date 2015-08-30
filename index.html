@@ -60,12 +60,19 @@
 </ul>
 
 <p>You can click 'Options' to edit the JSON string. Note the IgnoredSites array are sites to <em>NOT LOG ANY TIME FOR</em>
-You can add any number of additional arrays into the JSON string as they are "Branches" in WakaTime reporting
+You can add any number of additional arrays into the JSON string as they are <em>Language</em> in WakaTime reporting
 You will also see a new icon in the upper right of your google toolbar that looks like a clock. This gets you to options as well.</p>
 
-<p>The extension comes pre-populated with a JSON string to give you ideas of how to segregate your browsing. </p>
+<h3>
+<a id="added-2013-08-30" class="anchor" href="#added-2013-08-30" aria-hidden="true"><span class="octicon octicon-link"></span></a>Added 2013-08-30</h3>
 
-<p><strong>ANY SITE THAT ISN'T LISTED IN THE JSON options string is listed under a branch called "Browsing" in WakaTime.</strong></p>
+<p>The extension is now using <em>Language</em> instead of <em>Branches</em> to categorize your web browsing. 
+The extension is now using your <em>last_project</em> value from your most recent heartbeat to determine the project the browsing should be attached too. 
+There's also a new feature called DeadTime. DeadTime Use Case (long winded): You startup your computer or just come back from a break and hop on the internet. You haven't opened an editor or done any work yet/recently. Without this feature enabled, your web browsing would get attached to the last project you worked on, which most likely you aren't working on right this second. As soon as you start working on a project, your heartbeats will show the correct last_project value on the next heartbeat sent from Chrome automatically. Set to 0 to disable this feature.</p>
+
+<p>The extension comes pre-populated with a JSON string to give you ideas of how to segregate your browsing and now lists out the chrome debugger under "Debugging" by default instead of ignoring the site.</p>
+
+<p><strong>ANY SITE THAT ISN'T LISTED IN THE JSON options string is listed under a language called "Browsing" in WakaTime.</strong></p>
         </section>
 
         <footer>
