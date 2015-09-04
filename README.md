@@ -22,13 +22,16 @@ The extension comes pre-populated with a JSON string to give you ideas of how to
 
 **ANY SITE THAT ISN'T LISTED IN THE JSON options string is listed under a language called "Browsing" in WakaTime.**
 
-### 2013-08-27
+### 2015-08-27
 Initial release
 
-### Added 2013-08-30
+### Added 2015-08-30
 The extension is now using *Language* instead of *Branches* to categorize your web browsing. 
 The extension is now using your *last_project* value from your most recent heartbeat to determine the project the browsing should be attached too. 
 Added content_scripts to inject into pages your are browsing to be able to capture browsing changes and get a heartbeat as soon as you navigate between web pages instead of it waiting for the first interval tick as it had previously. We were already triggering heartbeats on new tabs and tab changes, so this just tightened up the first heartbeat issue when navigating between sites.
 
 There's also a new feature called DeadTime. DeadTime Use Case (long winded): You startup your computer or just come back from a break and hop on the internet. You haven't opened an editor or done any work yet/recently. Without this feature enabled, your web browsing would get attached to the last project you worked on, which most likely you aren't working on right this second. As soon as you start working on a project, your heartbeats will show the correct last_project value on the next heartbeat sent from Chrome automatically. Set to 0 to disable this feature.
+
+### Added 2015-09-03
+Added listeners to document.onmousedown and document.onkeydown to capture if the user is actively using the brower. If it is over Deadtime, don't log the heartbeat (unless actively Debugging) again until the user either clicks or presses a key in the active browser window. This is to resolve https://github.com/ChristineBoersen/WakaTimeChrome/issues/2
 
