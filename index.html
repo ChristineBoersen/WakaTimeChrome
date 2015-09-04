@@ -68,18 +68,23 @@ You will also see a new icon in the upper right of your google toolbar that look
 <p><strong>ANY SITE THAT ISN'T LISTED IN THE JSON options string is listed under a language called "Browsing" in WakaTime.</strong></p>
 
 <h3>
-<a id="2013-08-27" class="anchor" href="#2013-08-27" aria-hidden="true"><span class="octicon octicon-link"></span></a>2013-08-27</h3>
+<a id="2015-08-27" class="anchor" href="#2015-08-27" aria-hidden="true"><span class="octicon octicon-link"></span></a>2015-08-27</h3>
 
 <p>Initial release</p>
 
 <h3>
-<a id="added-2013-08-30" class="anchor" href="#added-2013-08-30" aria-hidden="true"><span class="octicon octicon-link"></span></a>Added 2013-08-30</h3>
+<a id="added-2015-08-30" class="anchor" href="#added-2015-08-30" aria-hidden="true"><span class="octicon octicon-link"></span></a>Added 2015-08-30</h3>
 
 <p>The extension is now using <em>Language</em> instead of <em>Branches</em> to categorize your web browsing. 
 The extension is now using your <em>last_project</em> value from your most recent heartbeat to determine the project the browsing should be attached too. 
 Added content_scripts to inject into pages your are browsing to be able to capture browsing changes and get a heartbeat as soon as you navigate between web pages instead of it waiting for the first interval tick as it had previously. We were already triggering heartbeats on new tabs and tab changes, so this just tightened up the first heartbeat issue when navigating between sites.</p>
 
 <p>There's also a new feature called DeadTime. DeadTime Use Case (long winded): You startup your computer or just come back from a break and hop on the internet. You haven't opened an editor or done any work yet/recently. Without this feature enabled, your web browsing would get attached to the last project you worked on, which most likely you aren't working on right this second. As soon as you start working on a project, your heartbeats will show the correct last_project value on the next heartbeat sent from Chrome automatically. Set to 0 to disable this feature.</p>
+
+<h3>
+<a id="added-2015-09-03" class="anchor" href="#added-2015-09-03" aria-hidden="true"><span class="octicon octicon-link"></span></a>Added 2015-09-03</h3>
+
+<p>Added listeners to document.onmousedown and document.onkeydown to capture if the user is actively using the brower. If it is over Deadtime, don't log the heartbeat (unless actively Debugging) again until the user either clicks or presses a key in the active browser window. This is to resolve <a href="https://github.com/ChristineBoersen/WakaTimeChrome/issues/2">https://github.com/ChristineBoersen/WakaTimeChrome/issues/2</a></p>
         </section>
 
         <footer>
