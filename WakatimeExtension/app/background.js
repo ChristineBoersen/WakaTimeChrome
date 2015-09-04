@@ -1,4 +1,5 @@
-﻿chrome.tabs.onActivated.addListener(function (activeInfo) {
+﻿var WakaTimeLastUserInteraction = (Date.now() / 1000);
+chrome.tabs.onActivated.addListener(function (activeInfo) {
     try {
         chrome.tabs.get(activeInfo.tabId, function (tab) {
             if (tab) {
@@ -31,6 +32,14 @@ chrome.runtime.onMessage.addListener(
     
       if (request && request.data && request.data == "heartbeat" && sender.tab) {
           Logtime(sender.tab.url);
+      }
+
+      if (request && request.data && request.data == "mousedown" && sender.tab) {
+          WakaTimeLastUserInteraction = (Date.now() / 1000);
+      }
+
+      if (request && request.data && request.data == "keydown" && sender.tab) {
+          WakaTimeLastUserInteraction = (Date.now() / 1000);
       }
   });
 
@@ -85,6 +94,13 @@ function Logtime(newUrl) {
                         Project = "Chrome WebBrowsing";
                     }
 
+                    var Age = (Date.now() / 1000) - WakaTimeLastUserInteraction;
+
+                    if (_DeadTime > 0 && Age > _DeadTime && Project != "Debugging")
+                    {
+                        console.log("No User Interaction in " + Age + " Seconds. Heartbeat not sent.")
+                        return;
+                    }
 
                     var Language = GetLanguage(_FilterObj, url);
                     if (Language == "" || Language == "IgnoredSites") { console.log('Ignored Site'); return; }
