@@ -175,7 +175,7 @@ function GetLanguage(_Filter, url) {
     return "Browsing";
 }
 
-var pollInterval = 1000 * 15; // 15 seconds, in milliseconds
+var pollInterval = 1000 * 60; // 60 seconds, in milliseconds
 window.setInterval(startRequest, pollInterval);
 function startRequest() {
 
